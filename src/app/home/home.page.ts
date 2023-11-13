@@ -15,12 +15,15 @@ export class HomePage implements OnInit{
 
 
   ngOnInit(): void {
-    this.getData();
+
+   setInterval(() => {
+    this.getData()
+   },1000)
   }
 
   getData(){
     this.apiCall.getAll().then((res:any)=>{
-      if(res){ 
+      if(res){
         this.employeeData = res;
         this.currentEmployeeData = this.employeeData.filter((date:any)=>!date.jobEnddate)
         this.previousEmployeeData = this.employeeData.filter((date:any)=>date.jobEnddate)
@@ -31,7 +34,7 @@ export class HomePage implements OnInit{
   removeItem(data:any){
    console.log(data)
    this.apiCall.delete(data.tempId).then((res:any)=>{
-    if(res){ 
+    if(res){
       this.getData();
     }
     })

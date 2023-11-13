@@ -103,8 +103,11 @@ export class AddEmployeePage implements OnInit {
       jobEnddate:this.employeeForm.get('jobEndDate')?.value,
     }
     this.apiCall.add(tempId,model).then(res=>{
+
       if(res){
+        this.employeeForm.reset();
         this.navigateTo('/home')
+
       }
       })
   }
@@ -149,12 +152,12 @@ export class AddEmployeePage implements OnInit {
       case 'thisMonthStartdate' : {
        const date = new Date();
        const firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
-       return firstDay; 
+       return firstDay;
       }
       case 'thisMonthEndDate' : {
        const date = new Date();
        const lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0);
-       return lastDay; 
+       return lastDay;
       }
       case 'lastMonthStartdate' : {
        const date = new Date();
@@ -254,9 +257,9 @@ export class AddEmployeePage implements OnInit {
         const lastYearEndDate = new Date(`12/31/${date.getFullYear()-1}`);;
         return lastYearEndDate;
        }
-      default: { 
+      default: {
         return new Date();
-      } 
+      }
     }
    }
 
