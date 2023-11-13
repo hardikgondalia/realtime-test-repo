@@ -1,0 +1,76 @@
+<ion-header class="employee_header">
+  <ion-toolbar class="employee_toolbar">
+    <ion-title class="employee_title"> Employee List </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="employeeData.length===0" [fullscreen]="true">
+  <div class="img_layout">
+    <img src="assets/no-employee.png">
+  </div>
+  <div class="add_button">
+    <mat-icon (click)="navigateTo('/home/add-employee')">add</mat-icon>
+  </div>
+</ion-content>
+
+<ion-content *ngIf="employeeData.length>0" [fullscreen]="true">
+  <ion-list *ngIf="currentEmployeeData.length>0">
+    <div class="current_employees">
+      <div class="employee_title">
+        <span>Current employees</span>
+      </div>
+      <ion-item-sliding
+        class="employee_list_part"
+        *ngFor="let data of currentEmployeeData"
+      >
+        <ion-item>
+          <div class="employee_list">
+            <span class="employee_name">{{data.personName}}</span>
+            <span>{{data.personRole}}</span>
+            <span class="employee_date"
+              >From {{data.jobStartDate | date : 'MMM d, y'}}</span
+            >
+          </div>
+        </ion-item>
+
+        <ion-item-options>
+          <button class="delete_button" (click)="removeItem(data)">
+            <mat-icon >delete</mat-icon>
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </div>
+  </ion-list>
+
+  <ion-list *ngIf="previousEmployeeData.length>0">
+    <div class="current_employees">
+      <div class="employee_title">
+        <span>Previous employees</span>
+      </div>
+      <ion-item-sliding
+        class="employee_list_part"
+        *ngFor="let data of previousEmployeeData"
+      >
+        <ion-item>
+          <div class="employee_list">
+            <span class="employee_name">{{data.personName}}</span>
+            <span>{{data.personRole}}</span>
+            <span class="employee_date"
+              >From {{data.jobStartDate | date : 'MMM d, y'}} - To
+              {{data.jobEnddate | date : 'MMM d, y'}}</span
+            >
+          </div>
+        </ion-item>
+
+        <ion-item-options>
+          <button class="delete_button" (click)="removeItem(data)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </div>
+  </ion-list>
+  <div class="add_button">
+    <mat-icon (click)="navigateTo('/home/add-employee')">add</mat-icon>
+  </div>
+</ion-content>

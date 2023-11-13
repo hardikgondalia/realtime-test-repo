@@ -1,0 +1,110 @@
+.addemployee_header {
+  box-shadow: none;
+}
+
+.addemployee_toolbar {
+  --background: #1da1f2;
+}
+
+.addemployee_title {
+  padding: 0px 16px;
+  color: #fff;
+  --font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.select_form {
+  .form_list {
+    padding: 24px 16px 0px 16px;
+
+    .person_field {
+      height: 40px;
+      padding: 8px;
+      display: flex;
+      border: 1px solid #e5e5e5;
+      border-radius: 4px;
+      margin-bottom: 23px;
+
+      .person_name {
+        margin-right: 12px;
+      }
+    }
+
+    .select_role {
+      border: 1px solid #e5e5e5;
+      border-radius: 4px;
+      height: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px;
+    }
+  }
+
+  .dialog_button {
+    width: 100%;
+    padding: 24px 16px 0px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    button {
+      width: 172px;
+      height: 40px;
+      padding-left: 10px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      border: 1px solid #e5e5e5;
+      border-radius: 4px;
+      background-color: transparent;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 20px;
+    }
+  }
+
+  .mat-icon {
+    color: #1DA1F2;
+  }
+}
+
+.employee_content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.buttons {
+  padding: 12px 16px;
+  border-top: 1px solid #f2f2f2;
+  display: flex;
+  justify-content: end;
+  margin-top: auto;
+}
+
+::ng-deep .person_field .native-wrapper.sc-ion-input-md {
+  display: unset;
+}
+
+.cancle .button-native {
+  --background-color: #1da1f2;
+}
+
+// Don't Given Parent Class
+::ng-deep .action-sheet-button-inner.sc-ion-action-sheet-md {
+  justify-content: center;
+}
+
+::ng-deep .action-sheet-button.sc-ion-action-sheet-md {
+  padding: 16px;
+  border: 1px solid #f2f2f2;
+}
+
+::ng-deep .action-sheet-group-cancel.sc-ion-action-sheet-md {
+  display: none;
+}

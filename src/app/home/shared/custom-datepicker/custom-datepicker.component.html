@@ -1,0 +1,22 @@
+<div class="celender_popup">
+  <div class="selected_date" *ngIf="buttonsArray.length>0">
+    <span class="select_button" *ngFor="let date of buttonsArray">
+      <button (click)="selectedDate(date)">{{date.label}}</button>
+    </span>
+  </div>
+  <div>
+    <mat-card class="demo-inline-calendar-card">
+      <mat-calendar [(selected)]="selected" [maxDate]="maxDate" [minDate]="minDate" (selectedChange)="onSelect($event)"></mat-calendar>
+    </mat-card>
+  </div>
+  <div class="tab_button">
+    <span><mat-icon>calendar_today</mat-icon>&nbsp; 
+      <span *ngIf="selected">{{selected | date : 'MMM d, y'}}</span>
+      <span *ngIf="!selected">No Data</span>
+    </span>
+    <span>
+      <button color="cancle_button" (click)="closeDialog()">Cancle</button>
+      <button class="save_button" (click)="saveDialog()">Save</button>
+    </span>
+  </div>
+</div>

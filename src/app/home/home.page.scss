@@ -1,0 +1,123 @@
+#container {
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #8c8c8c;
+
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+
+.current_employees {
+  .employee_title {
+    padding: 16px;
+    background-color: #f2f2f2;
+    text-align: left;
+
+    span {
+      color: #1da1f2;
+      --font-family: Roboto;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 24px;
+    }
+  }
+
+  .employee_list_part {
+    .employee_list {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      border-bottom: 1px solid #f2f2f2;
+
+      .employee_name {
+        --font-family: Roboto;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        color: #323238;
+        margin-bottom: 6px;
+      }
+
+      span {
+        color: #949c9e;
+        --font-family: Roboto;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+      }
+
+      .employee_date {
+        font-size: 12px;
+        margin-top: 6px;
+      }
+    }
+  }
+}
+
+.img_layout {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add_button {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  border-radius: 8px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1da1f2;
+  color: #fff;
+}
+
+.delete_button {
+  color: white;
+  background-color: red;
+}
+.item-options{
+  // margin: 20px;
+}
+
+.employee_header {
+  box-shadow: none;
+}
+
+.employee_toolbar {
+  --background: #1da1f2;
+}
+
+.employee_title {
+  padding: 0px 16px;
+  color: #fff;
+  --font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}

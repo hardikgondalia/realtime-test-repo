@@ -1,0 +1,53 @@
+<ion-header [translucent]="true" class="addemployee_header">
+  <ion-toolbar class="addemployee_toolbar">
+    <ion-title class="addemployee_title">Add Employee Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="employee_content">
+    <!-- <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">add-employee</ion-title>
+    </ion-toolbar>
+  </ion-header> -->
+
+    <div class="select_form">
+
+      <form [formGroup]="employeeForm">
+
+      
+      <ion-list class="form_list">
+        <div class="person_field">
+          <mat-icon>person</mat-icon>
+          <ion-item>
+            <ion-input placeholder="Employee Name" formControlName="personName"></ion-input>
+          </ion-item>
+        </div>
+        <div class="select_role" (click)="openBottomSheet()">
+          <span *ngIf="employeeForm.get('personRole')?.value">{{employeeForm.get('personRole')?.value}}</span>
+          <span *ngIf="!employeeForm.get('personRole')?.value">Select Role</span>
+          <mat-icon>keyboard_arrow_down</mat-icon>
+        </div>
+
+      </ion-list>
+    </form>
+      <div class="dialog_button">
+        <button mat-button (click)="openStartDialog()"><mat-icon>calendar_today</mat-icon> &nbsp; 
+          <span *ngIf="employeeForm.get('jobStartDate')?.value">{{employeeForm.get('jobStartDate')?.value | date :'dd-MM-yyyy'}}</span>&nbsp;
+          <span *ngIf="!employeeForm.get('jobStartDate')?.value">Select Date</span>
+        </button>
+        <mat-icon>arrow_forward</mat-icon>
+        <button mat-button (click)="openEndDialog()"><mat-icon>calendar_today</mat-icon> &nbsp;
+          <span *ngIf="employeeForm.get('jobEndDate')?.value">{{employeeForm.get('jobEndDate')?.value | date :'dd-MM-yyyy'}}</span>&nbsp;
+          <span *ngIf="!employeeForm.get('jobEndDate')?.value">Select Date</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <ion-button color="secondary cancle" (click)="navigateTo('/home')">Cancle</ion-button>
+      <ion-button (click)="saveEmployee()">Save</ion-button>
+    </div>
+  </div>
+</ion-content>
